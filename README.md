@@ -30,8 +30,6 @@ Here’s what the email will look like:
 
 Here’s a list of steps that this logic will carry out.
 
-以下是此逻辑将执行的步骤列表。
-
 1. Check to see if SQL Database Mail has been configured.
 2. Completely configures SQL Database Mail for you.
 3. Sends off a test email so you know if it’s working or not. (Test email includes name of server/instance so you know where the email came from)
@@ -39,14 +37,17 @@ Here’s a list of steps that this logic will carry out.
 5. Finds the last 30 days backups, and their locations so you’ll know when and where the former backups were going.
 6. Sends off a nifty formatted email showing you how old the last backup is, and pulls a list of the last 30 days backups for reference.
 
+
+This Job will ignore Mirror configured databases. Principals will be checked for current backup, but if this Job was deployed to a Mirrored server the Mirror partner databases will simply be ignored as they don’t require backups. If they were switched to the Principal they of course would be checked.
+
+以下是此逻辑将执行的步骤列表。
+
 1. 检查是否已配置SQL数据库邮件。
 2. 完全配置SQL数据库邮件。
 3. 发送测试电子邮件，以便知道它是否正常工作。 （测试电子邮件包括服务器/实例的名称，以便知道电子邮件的来源）
 4. 获取缺少最近完整数据库备份的所有数据库的列表。
 5. 查找最近30天的备份及其位置，以便了解以前备份的时间和地点。
 6. 发送一个格式化电子邮件，显示上次备份的时间长度，并提取最近30天备份的列表以供参考。
-
-This Job will ignore Mirror configured databases. Principals will be checked for current backup, but if this Job was deployed to a Mirrored server the Mirror partner databases will simply be ignored as they don’t require backups. If they were switched to the Principal they of course would be checked.
 
 此作业将忽略镜像配置的数据库。将检查主体是否有当前备份，但如果将此作业部署到镜像服务器，则只需忽略镜像伙伴数据库，因为它们不需要备份。如果他们切换到主题就会被检查。
 
